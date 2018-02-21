@@ -1,0 +1,22 @@
+<div class="container">
+    <div class="row">
+      <div class="col-lg-12 text-left">
+        <button class="btn btn-primary" (click)="onLoadMore()">Load More Images</button>
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="col-lg-12">
+  
+        <div class="image-container">
+          <app-post *ngFor="let post of all"
+                    [imageName]="post.data.name"
+                    (favoriteClicked)="onFavoritesClicked($event)"
+                    (followClicked)="onFollowClicked($event)"
+          >
+          </app-post>
+        </div>
+  
+      </div>
+    </div>
+  </div>

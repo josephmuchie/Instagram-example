@@ -1,0 +1,9 @@
+.image-container{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+app-post{
+    margin: 10px;
+}

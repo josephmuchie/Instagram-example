@@ -1,0 +1,42 @@
+<div class="full-frame">
+
+    <div class="image-section">
+     <img [src]="defaultImage">
+    </div>
+  
+    <div class="text-section">
+      <div class="text-section-row row0">
+        <span>{{imageData.name}}</span>
+      </div>
+
+      <div *ngIf="imageData.creationDate" class="text-section-row row1">
+        <span>Posted on: {{imageData.creationDate | date: 'MM/dd/yy'}}</span>
+      </div>
+  
+      <div *ngIf="imageData.uploadedBy && displayPostedBy" class="text-section-row row2">
+        <span>Posted by: {{imageData.uploadedBy.name}} </span>
+      </div>
+  
+      <div *ngIf="imageData.favoriteCount >= 0" class="text-section-row row3">
+        <span class="glyphicon glyphicon-heart">{{imageData.favoriteCount}}</span>
+      </div>
+ 
+      <div class="text-section-row row4 action-row hvr-grow" *ngIf="displayFavoritesButton">
+        <span (click)="onFavoritesClicked()">
+          <span class=""></span>
+          Add to Favorites
+        </span>
+      </div>
+     
+      <div class="text-section-row row5 action-row hvr-grow" *ngIf="displayFollowButton">
+        <span (click)="onFollowClicked()">
+          <span class="glyphicon glyphicon-user"></span>
+          Follow
+        </span>
+      </div>
+  
+    </div>
+  
+  </div>
+  
+  
